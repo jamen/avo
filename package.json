@@ -1,6 +1,6 @@
 {
   "name": "avo",
-  "description": "Functions for building UI in full JavaScript",
+  "description": "Functions for building UI in JavaScript",
   "version": "0.0.0",
   "homepage": "https://github.com/jamen/avo",
   "author": "Jamen Marz (https://git.io/jamen)",
@@ -10,8 +10,6 @@
   },
   "files": [
     "index.js",
-    "html.js",
-    "css.js",
     "transform.js"
   ],
   "license": "MIT",
@@ -26,12 +24,17 @@
   },
   "keywords": [
     "avo",
-    "jamen"
+    "jamen",
+    "front-end",
+    "state",
+    "management",
+    "ui",
+    "html",
+    "css"
   ],
   "dependencies": {
     "sheet-router": "^4.2.2",
     "sheetify": "^6.0.1",
-    "snabby": "^0.2.0",
-    "through2": "^2.0.3"
+    "snabby": "^0.2.0"
   }
 }

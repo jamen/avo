@@ -1,7 +1,7 @@
 
 # avo
 
-> Functions for building UI in full JavaScript
+> Functions for building UI in JavaScript
 
 ```js
 var {app, html, css} = require('avo')
@@ -9,25 +9,67 @@ var {app, html, css} = require('avo')
 // ...
 ```
 
-A longer description of your function here.
+Three main goals to this:
+
+ - Ability to build apps in full JavaScript
+ - Speedy. Uses Snabby on top of Snabbdom
+ - Small.  No bloat, just separate into packages
 
 ## Installation
 
 ```sh
 $ npm install --save avo
+# with Yarn:
+$ yarn add avo
 ```
 
 ## Usage
 
-### `avo()`
+### `avo(opts)`
 
-A description of your function
+State manager and router using a messaging scheme.  Accessed as `avo.app` if destructuring.
 
 ```js
-var foo = avo()
+var avo = require('avo')
+var { app, ... } = require('avo')
 
-// Log results
-console.log(foo)
+var foo = app({
+  // opts
+})
+```
+
+### `avo.html`
+
+A template string tag based on [Snabby](https://github.com/jamen/snabby) that creates your views.
+
+```js
+var { app, html } = require('avo')
+
+var foo = html`
+  <div class='hello'>
+    Hello world!
+  </div>
+`
+```
+
+### `avo.css`
+
+A template string tag based on [Sheetify](https://github.com/stackcss/sheetify) that creates your styles
+
+```js
+var { app, html, css } = require('avo')
+
+var prefix = css`
+  :host {
+    color: red
+  }
+`
+
+var foo = html`
+  <div class='${prefix}'>
+    Hello world!
+  </div>
+`
 ```
 
 ## License
