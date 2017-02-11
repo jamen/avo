@@ -25,17 +25,31 @@ $ yarn add avo
 
 ## Usage
 
-### `avo(opts)`
+### `avo.app(opts)`
 
-State manager and router using a messaging scheme.  Accessed as `avo.app` if destructuring.
+Manages an application's state and routes.
+
+
 
 ```js
-var avo = require('avo')
-var { app, ... } = require('avo')
+var app = require('avo').app
 
-var foo = app({
-  // opts
+var start = app({
+  // Initial state
+  state: { title: 'foobar' },
+  // Subscribers
+  subs: { ... },
+  // Messages
+  update: { ... },
+  // App routes
+  routes: [
+    ['/', home],
+    ['/foo', foo]
+  ],
 })
+
+// Start with DOM entry point
+start(document.body)
 ```
 
 ### `avo.html`
