@@ -1,4 +1,4 @@
-var { app, html, css } = require('../../')
+var { app, html } = require('../../')
 
 var start = app({
   state: 0,
@@ -12,12 +12,6 @@ var start = app({
 })
 
 function main (params, count, send) {
-  css`
-    .main {
-      color: red;
-    }
-  `
-
   return html`
     <div.main>
       <span @on:click=${increment}>+</span>
