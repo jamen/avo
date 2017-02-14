@@ -22,8 +22,8 @@ exports.app = function app (opts) {
   var current
   var view
 
-  function send (name, arg1, arg2, arg3, arg4, arg5) {
-    state = update[name](state, arg1, arg2, arg3, arg4, arg5)
+  function send (name, a1, a2, a3, a4, a5) {
+    state = update[name](state, a1, a2, a3, a4, a5)
     html.update(current, current = view(state, send))
   }
 
